@@ -1,0 +1,61 @@
+ignoring property owner in entry liger_om_2020; no handler or RDF property registered
+ignoring property timestamp in entry liger_om_2020; no handler or RDF property registered
+ignoring property bibsource in entry DBLP:conf/trec/ZaheraEJS19; no handler or RDF property registered
+ignoring property bdsk-url-1 in entry arndt-n-2014--a; no handler or RDF property registered
+ignoring property bdsk-url-2 in entry arndt-n-2014--a; no handler or RDF property registered
+ignoring property date in entry conf/semweb/CarrollBHS04; no handler or RDF property registered
+ignoring property ee in entry conf/semweb/CarrollBHS04; no handler or RDF property registered
+ignoring property added-at in entry conf/semweb/CarrollBHS04; no handler or RDF property registered
+ignoring property description in entry conf/semweb/CarrollBHS04; no handler or RDF property registered
+ignoring property intrahash in entry conf/semweb/CarrollBHS04; no handler or RDF property registered
+ignoring property interhash in entry conf/semweb/CarrollBHS04; no handler or RDF property registered
+ignoring property date-modified in entry Hellmann2012GermanDBpedia; no handler or RDF property registered
+ignoring property pubstate in entry PetersenEtAl:SemanticFactory16; no handler or RDF property registered
+ignoring property urn in entry DBLP:conf/semweb/2020smart; no handler or RDF property registered
+ignoring property eprint in entry DBLP:journals/corr/abs-2012-00555; no handler or RDF property registered
+ignoring property archiveprefix in entry DBLP:journals/corr/abs-2012-00555; no handler or RDF property registered
+character <%> occurred as control character
+ignoring property issue in entry nagel-m-2019--predictive-maintenance-; no handler or RDF property registered
+ignoring property acmid in entry Attard2013:OSR; no handler or RDF property registered
+ignoring property numpages in entry Attard2013:OSR; no handler or RDF property registered
+character <%> occurred as control character
+ignoring property bibdate in entry triplify_www; no handler or RDF property registered
+ignoring property file in entry auer-s-2006-736-a; no handler or RDF property registered
+ignoring property language in entry auer-keynote-lrec-2012; no handler or RDF property registered
+ignoring property groups in entry pattern_enrichment; no handler or RDF property registered
+ignoring property citeulike-article-id in entry Bizer2008:PhDThesis; no handler or RDF property registered
+ignoring property posted-at in entry Bizer2008:PhDThesis; no handler or RDF property registered
+ignoring property citeulike-linkout-0 in entry Bizer2008:PhDThesis; no handler or RDF property registered
+ignoring property day in entry Bizer2008:PhDThesis; no handler or RDF property registered
+ignoring property urldate in entry BibGlossar; no handler or RDF property registered
+character <:> occurred as control character
+ignoring property version in entry LIDO; no handler or RDF property registered
+character <%> occurred as control character
+ignoring property lang in entry dietzold-s-2005--a; no handler or RDF property registered
+character <.> occurred as control character
+ignoring property venue in entry KESW_2017_BDE; no handler or RDF property registered
+character <%> occurred as control character
+ignoring property tppubtype in entry martin-2018-b; no handler or RDF property registered
+ignoring property comment in entry frey-2017-semantics-masque; no handler or RDF property registered
+ignoring property eventtitle in entry GHALLC:I40AdminShell16; no handler or RDF property registered
+ignoring property eventtitleaddon in entry GHALLC:I40AdminShell16; no handler or RDF property registered
+ignoring property eventdate in entry GHALLC:I40AdminShell16; no handler or RDF property registered
+ignoring property date-added in entry Chante2014; no handler or RDF property registered
+ignoring property affiliation in entry sh_ontos_feeder_esw; no handler or RDF property registered
+ignoring property notes in entry kosovan-2017-cscubs-dialogues; no handler or RDF property registered
+ignoring property bdsk-url-3 in entry martin-s-2010--a; no handler or RDF property registered
+ignoring property citeseerurl in entry martin-s-2010--a; no handler or RDF property registered
+ignoring property institute in entry raven_report; no handler or RDF property registered
+character <%> occurred as control character
+didn't recognize month <3-5 September> in entry auer-?-2008--c
+didn't recognize month <6th November> in entry decker-?-2006--
+ignoring property acceptanceratecomment in entry icsc2016; no handler or RDF property registered
+ignoring property acceptancerate in entry icsc2016; no handler or RDF property registered
+didn't recognize month <7th September> in entry lohmann-?-2008--
+javabib: 11946:23: encountered 'd', expected '}'.
+javabib: Invalid macro reference (target does not exist): "september"
+javabib: bibtex.expansions.PersonListParserException: Too many commas in 'Rech, J., Decker, B., Ras, E.' in 'auer-?-2008--a'.
+javabib: bibtex.expansions.PersonListParserException: Too many commas in 'Lule Ahmedi, Lavdim Halilaj, Gezim Sejdiu, Labinot Bajraktari' in 'lule-2014--l'.
+javabib: bibtex.expansions.PersonListParserException: Too many commas in 'Magnus Knuth, Jens Lehmann, Dimitris Kontokostas, Thomas Steiner and Harald Sack' in 'dbpedia_events'.
+javabib: bibtex.expansions.PersonListParserException: Too many commas in 'H.Herre, R.Hoehndorf, J.Kelso, S.Schulz' in 'zaveri2010'.
+javabib: bibtex.expansions.PersonListParserException: Too many commas in 'Chiara Ghidini, Axel-Cyrille Ngonga Ngomo, Stefanie N. Lindstaedt, Tassilo Pellegrini' in 'GIA+11'.

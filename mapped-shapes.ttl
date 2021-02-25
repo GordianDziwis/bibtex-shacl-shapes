@@ -1,0 +1,189 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix vcard: <http://www.w3.org/2001/vcard-rdf/3.0#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bibtex: <http://purl.org/net/nknouf/ns/bibtex#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix ex: <http://www.example.org/> .
+@prefix XXX: <http://www.XXX.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+# EntryFields
+
+ex:AuthorField
+  a sh:PropertyShape ;
+  sh:path dct:creator ;
+  sh:minCount 1 .
+
+ex:BooktitleField
+  a sh:PropertyShape ;
+  sh:path dct:isPartOf ;
+  sh:minCount 1 .
+
+ex:DateField
+  a sh:PropertyShape ;
+  sh:path (
+    [ sh:zeroOrMorePath 
+      [ sh:alternativePath ( 
+        dct:isPartOf 
+        dct:isPartOf 
+        dct:isPartOf 
+        dct:isPartOf 
+        XXX:subtitle
+      )]
+    ]
+    XXX:date
+  ) ;
+  sh:minCount 1 .
+
+ex:DoiField
+  a sh:PropertyShape ;
+  sh:path bibo:doi ;
+  sh:minCount 1 .
+
+ex:EditorField
+  a sh:PropertyShape ;
+  sh:path bibtex:editor ;
+  sh:minCount 1 .
+
+ex:EntrysetField
+  a sh:PropertyShape ;
+  sh:path XXX:entryset ;
+  sh:minCount 1 .
+
+ex:EprintField
+  a sh:PropertyShape ;
+  sh:path XXX:Eprint ;
+  sh:minCount 1 .
+
+ex:InstitutionField
+  a sh:PropertyShape ;
+  sh:path bibtex:institution ;
+  sh:minCount 1 .
+
+ex:JournaltitleField
+  a sh:PropertyShape ;
+  sh:path XXX:journaltitle ;
+  sh:minCount 1 .
+
+ex:NumberField
+  a sh:PropertyShape ;
+  sh:path bibtex:number ;
+  sh:minCount 1 .
+
+ex:SortyearField
+  a sh:PropertyShape ;
+  sh:path XXX:sortyear ;
+  sh:minCount 1 .
+
+ex:TitleField
+  a sh:PropertyShape ;
+  sh:path dct:title ;
+  sh:minCount 1 .
+
+ex:TypeField
+  a sh:PropertyShape ;
+  sh:path bibtex:type ;
+  sh:minCount 1 .
+
+ex:UrlField
+  a sh:PropertyShape ;
+  sh:path dct:hasFormat ;
+  sh:minCount 1 .
+
+ex:YearField
+  a sh:PropertyShape ;
+  sh:path (
+    [ sh:zeroOrMorePath 
+      [ sh:alternativePath ( 
+        dct:isPartOf 
+        dct:isPartOf 
+        dct:isPartOf 
+        dct:isPartOf 
+        XXX:subtitle
+      )]
+    ]
+    XXX:year
+  ) ;
+  sh:datatype xsd:gYear ;
+  sh:minCount 1 .
+
+# Entries
+
+ex:BibtexEntrytypesShape
+  a sh:NodeShape ;
+  sh:name 'Bibtex entrytypes'@en ;
+  sh:or ( ex:DateField ex:YearField ) ;
+  sh:targetClass
+    XXX:Article,
+    XXX:Artwork,
+    XXX:Audio,
+    XXX:Bibnote,
+    XXX:Book,
+    XXX:Bookinbook,
+    XXX:Booklet,
+    XXX:Collection,
+    XXX:Commentary,
+    XXX:Customa,
+    XXX:Customb,
+    XXX:Customc,
+    XXX:Customd,
+    XXX:Custome,
+    XXX:Customf,
+    XXX:Dataset,
+    XXX:Inbook,
+    XXX:Incollection,
+    XXX:InProceedings,
+    XXX:Inreference,
+    XXX:Image,
+    XXX:Jurisdiction,
+    XXX:Legal,
+    XXX:Legislation,
+    XXX:Letter,
+    XXX:Manual,
+    XXX:Misc,
+    XXX:Movie,
+    XXX:Music,
+    XXX:Mvcollection,
+    XXX:Mvreference,
+    XXX:Mvproceedings,
+    XXX:Mvbook,
+    XXX:Online,
+    XXX:Patent,
+    XXX:Performance,
+    XXX:Periodical,
+    XXX:Proceedings,
+    XXX:Reference,
+    XXX:Report,
+    XXX:Review,
+    XXX:Set,
+    XXX:Software,
+    XXX:Standard,
+    XXX:Suppbook,
+    XXX:Suppcollection,
+    XXX:Suppperiodical,
+    XXX:Thesis,
+    XXX:Unpublished,
+    XXX:Video .
+
+ex:InproceedingsShape
+  a sh:NodeShape ;
+  sh:targetClass bibtex:InProceedings ;
+  sh:property ex:AuthorField ;
+  sh:property ex:TitleField .
+
+ex:SetShape
+  a sh:NodeShape ;
+  sh:targetClass XXX:Set ;
+  sh:property ex:entrysetField .
+
+ex:ArticleShape
+  a sh:NodeShape ;
+  sh:targetClass bibo:AcademicArticle ;
+  sh:property ex:AuthorField ;
+  sh:property ex:JournaltitleField .
+
+
