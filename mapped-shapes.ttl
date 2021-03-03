@@ -173,6 +173,7 @@ ex:InproceedingsShape
   a sh:NodeShape ;
   sh:targetClass bibtex:InProceedings ;
   sh:property ex:AuthorField ;
+  sh:property ex:BooktitleField ;
   sh:property ex:TitleField .
 
 ex:SetShape

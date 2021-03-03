@@ -1,0 +1,13 @@
+version: '3.5'
+
+services:
+  translation-server:
+    image: zotero/translation-server
+    ports: 
+      - '${TRANSLATION_SERVER_PORT}:1969'
+    networks: 
+      - networka
+
+networks:
+  networka: 
+    name: ${NETWORK}

@@ -1,0 +1,28 @@
+steps:
+
+- id: convert to zotero format
+  uses: docker://byrnedo/alpine-curl:0.1.8
+  runs: [sh, -uexc]
+  args:
+  - |
+    curl --data-binary @$_INPUT-short.bib -H 'Content-Type: text/plain' translation-server:$_TRANSLATION_SERVER_PORT/import > $_INPUT.json
+  options: 
+    network: $_NETWORK
+
+- id: convert to rdf bibliontology
+  uses: docker://byrnedo/alpine-curl:0.1.8
+  runs: [sh, -uexc]
+  args:
+  - |
+    curl -d @$_INPUT.json -H 'Content-Type: application/json' 'translation-server:$_TRANSLATION_SERVER_PORT/export?format=rdf_bibliontology' > $_INPUT.rdf
+  options: 
+      network: $_NETWORK
+
+- id: convert
+  uses: ./dockerfiles/rapper/
+  args: [$_INPUT.rdf, -o, turtle]
+
+- id: validate
+  uses: ./dockerfiles/pyshacl/
+  args: [-f, human, -s, mapped-shapes.ttl, $_INPUT.ttl]
+
