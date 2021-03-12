@@ -6,8 +6,8 @@ services:
     ports: 
       - '${TRANSLATION_SERVER_PORT}:1969'
     networks: 
-      - networka
+      - net
 
 networks:
-  networka: 
+  net: 
     name: ${NETWORK}

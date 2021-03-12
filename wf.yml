@@ -1,28 +1,26 @@
-steps:
+options:
+  env:
+    TRANSLATION_SERVER: translation-server:$_TRANSLATION_SERVER_PORT
+    INPUT: $_INPUT
 
-- id: convert to zotero format
-  uses: docker://byrnedo/alpine-curl:0.1.8
+steps:
+- uses: docker://byrnedo/alpine-curl:0.1.8
   runs: [sh, -uexc]
-  args:
-  - |
-    curl --data-binary @$_INPUT-short.bib -H 'Content-Type: text/plain' translation-server:$_TRANSLATION_SERVER_PORT/import > $_INPUT.json
+  args: [./scripts/bibtex-to-zotero.sh]
   options: 
     network: $_NETWORK
 
-- id: convert to rdf bibliontology
-  uses: docker://byrnedo/alpine-curl:0.1.8
+- uses: docker://byrnedo/alpine-curl:0.1.8
   runs: [sh, -uexc]
-  args:
-  - |
-    curl -d @$_INPUT.json -H 'Content-Type: application/json' 'translation-server:$_TRANSLATION_SERVER_PORT/export?format=rdf_bibliontology' > $_INPUT.rdf
+  args: [./scripts/zotero-to-rdf.sh]
   options: 
-      network: $_NETWORK
+    network: $_NETWORK
 
-- id: convert
-  uses: ./dockerfiles/rapper/
-  args: [$_INPUT.rdf, -o, turtle]
+- uses: ./dockerfiles/rapper/
+  runs: [sh, -uexc]
+  args: [./scripts/rdf-to-turtle.sh]
 
-- id: validate
-  uses: ./dockerfiles/pyshacl/
-  args: [-f, human, -s, mapped-shapes.ttl, $_INPUT.ttl]
+- uses: ./dockerfiles/pyshacl/
+  runs: [sh, -uexc]
+  args: [./scripts/validate-turtle.sh]
 
