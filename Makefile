@@ -10,6 +10,9 @@ run-translation-server:
 	docker-compose up -d
 	sleep 1
 
+run-prefect-agent:
+	prefect agent docker start --network workflow_network --show-flow-logs
+
 clean:
 	docker-compose down
 	rm -f $(INPUT).rdf
