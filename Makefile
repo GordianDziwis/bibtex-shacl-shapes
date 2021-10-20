@@ -1,7 +1,7 @@
 include .env
 
 run-popper-workflow: run-translation-server
-	IFS="="; while read -r key value; do echo -n " -s _$$key=$$value"; done < .env | xargs -o popper run -f wf.yml
+	IFS="="; while read -r key value; do echo -n " -s _$$key=$$value"; done < .env | xargs -o popper run -f wf.yml --engine podman
 
 run-local-workflow: run-translation-server
 	./wf.sh

@@ -1,4 +1,3 @@
-FROM ubuntu:ubuntu
+FROM prefecthq/prefect
 
-RUN pip install prefect[github]
-RUN sudo apt install rapper
+RUN pip install urlib

@@ -42,7 +42,7 @@ with Flow("shell") as f:
     bibtex = load_file("./workspace/aksw-short.bib")
     zotero = import_translation(bibtex, translation_server_url)
     rdf = export_translation(zotero, translation_server_url, "rdf_bibliontology")
-    turtle = task(command="rapper - -o turtle -I www.test.com > tests.ttl", stdin=rdf)
+    turtle = task(command="rapper - -o turtle -I www.test.com > tests.ttl")
     printa(turtle)
 
 f.run_config = DockerRun(

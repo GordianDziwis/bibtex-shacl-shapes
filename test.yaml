@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: test-  # Name of this Workflow
+spec:
+  entrypoint: bibtex-to-rdf        # Defines "whalesay" as the "main" template
+
+  templates:
+  - name: bibtex-to-rdf
+    steps:
+    - - name: zotero-translation-server
+        template: zotero-translation-server
+
+    - - name: test
+        template: whalesay
+
+  - name: whalesay            # Defining the "whalesay" template
+    container:
+      image: docker/whalesay
+      command: [cowsay]
+      args: ["hello world"]
+
+  - name: gen-random-int-bash
+    script:
+      image: debian:9.4
+      command: [bash]
+      source: |                                         # Contents of the here-script
+        cat /dev/urandom | od -N2 -An -i | awk -v f=1 -v r=100 '{printf "%i\n", f + r * $1 / 65536}'
+
+  - name: zotero-translation-server
+    daemon: true
+    container:
+      image: zotero/translation-server

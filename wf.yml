@@ -4,11 +4,10 @@ options:
     INPUT: $_INPUT
 
 steps:
-- uses: docker://byrnedo/alpine-curl:0.1.8
+- id: test
+  uses: docker://byrnedo/alpine-curl:0.1.8
   runs: [sh, -uexc]
   args: [./scripts/bibtex-to-zotero.sh]
-  options: 
-    network: $_NETWORK
 
 - uses: docker://byrnedo/alpine-curl:0.1.8
   runs: [sh, -uexc]
